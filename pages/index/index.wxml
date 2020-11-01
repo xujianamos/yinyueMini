@@ -1,8 +1,80 @@
-<view>
-  <swiper>
+<view class="indexContainer">
+  <!-- 轮播图区域 -->
+  <swiper indicator-dots indicator-color="white" indicator-active-color="red" autoplay circular>
     <swiper-item>
-      <image src=""></image>
-
+      <image class="img" src="/static/images/nvsheng.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/static/images/nvsheng.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/static/images/nvsheng.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/static/images/nvsheng.jpg"></image>
     </swiper-item>
   </swiper>
+  <!-- 图标导航区域 -->
+  <view class="navContainer">
+    <view class="navItem">
+      <text class="iconfont icon-tuijian"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="navItem">
+      <text class="iconfont icon-gedan"></text>
+      <text>歌单</text>
+    </view>
+    <view class="navItem">
+      <text class="iconfont icon-paihangbang"></text>
+      <text>排行榜</text>
+    </view>
+    <view class="navItem">
+      <text class="iconfont icon-diantai"></text>
+
+      <text>电台</text>
+    </view>
+    <view class="navItem">
+      <text class="iconfont icon-zhiboshipinshexiang"></text>
+
+      <text>直播</text>
+    </view>
+  </view>
+<!-- 推荐区域 -->
+<view class="recommendContainer">
+  <!-- 头部区域 -->
+  <view class="header">
+    <text>推荐歌曲</text>
+    <view class="">
+      <text>为你推荐</text>
+      <text class="more">查看更多</text>
+    </view>
+  </view>
+  <!-- 内容区域 -->
+  <scroll-view class="recommendScroll" enable-flex scroll-x>
+    <view class="scrollItem">
+      <image src="/static/images/nvsheng.jpg"></image>
+      <text>图片名字图片名字图片名字图片名字图片名字图片名字图片名字图片名字图片名字</text>
+    </view>
+    <view class="scrollItem">
+      <image src="/static/images/nvsheng.jpg"></image>
+      <text>图片名字</text>
+    </view>
+    <view class="scrollItem">
+      <image src="/static/images/nvsheng.jpg"></image>
+      <text>图片名字</text>
+    </view>
+    <view class="scrollItem">
+      <image src="/static/images/nvsheng.jpg"></image>
+      <text>图片名字</text>
+    </view>
+    <view class="scrollItem">
+      <image src="/static/images/nvsheng.jpg"></image>
+      <text>图片名字</text>
+    </view>
+    <view class="scrollItem">
+      <image src="/static/images/nvsheng.jpg"></image>
+      <text>图片名字</text>
+    </view>
+  </scroll-view>
+</view>
 </view>
