@@ -1,0 +1,8 @@
+<view>
+  <swiper>
+    <swiper-item>
+      <image src=""></image>
+
+    </swiper-item>
+  </swiper>
+</view>
