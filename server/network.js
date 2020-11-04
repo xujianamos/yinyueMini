@@ -10,7 +10,6 @@ export default (url,data={},method='GET')=>{
       success:(res)=>{
         console.log(res);
         resolve(res.data)
-        
       },
       fail:(err)=>{
         reject(err)
