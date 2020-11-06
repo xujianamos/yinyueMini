@@ -1,0 +1,7 @@
+<view class="header">
+    <text>{{title}}</text>
+    <view class="">
+      <text class="text">{{nav}}</text>
+      <text class="more">查看更多</text>
+    </view>
+  </view>

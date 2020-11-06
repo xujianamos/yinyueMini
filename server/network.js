@@ -8,7 +8,6 @@ export default (url,data={},method='GET')=>{
       data,
       method,
       success:(res)=>{
-        console.log(res);
         resolve(res.data)
       },
       fail:(err)=>{

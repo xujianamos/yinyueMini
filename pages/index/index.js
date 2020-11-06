@@ -6,7 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    banners: []
+    // 轮播图数据
+    bannerList: [],
+    // 推荐数据
+    recommendList: [],
+    // 排行榜数据
+    toplist: []
 
   },
 
@@ -14,10 +19,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-    let result = await request('/banner', {
+    let bannerListData = await request('/banner', {
       type: 2
     })
-    console.log(result);
+    let recommendListData = await request('/personalized', {
+      limit: 10
+    })
+    // 循环发送请求
+    let index = 0
+    let resultArr = []
+    while (index < 5) {
+      let topListData = await request('/top/list', {
+        idx: index++
+      })
+      let topListItem = {
+        name: topListData.playlist.name,
+        tracks: topListData.playlist.tracks.slice(0, 3)
+      }
+      resultArr.push(topListItem)
+      // 首先将第一个数据渲染的页面上,解决白屏问题
+      if (index === 1) {
+        this.setData({
+          toplist: resultArr
+        })
+      }
+    }
+    console.log(recommendListData);
+
+    this.setData({
+      bannerList: bannerListData.banners,
+      recommendList: recommendListData.result,
+      toplist: resultArr
+    })
 
   },
 

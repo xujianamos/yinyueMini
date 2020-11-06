@@ -1,12 +1,22 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/video/video",
+    "pages/personal/personal"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#d43c33",
     "navigationBarTitleText": "云音乐",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "/pages/index/index",
+      "text": "主页",
+      "iconPath": "iconPath",
+      "selectedIconPath": "selectedIconPath"
+    }]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
