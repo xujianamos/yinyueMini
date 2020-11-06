@@ -1,4 +1,4 @@
-import request from "../../utils/request";
+import request from '../../server/network'
 
 let startY = 0; // 手指起始的坐标
 let moveY = 0; // 手指移动的坐标
@@ -44,20 +44,25 @@ Page({
     })
   },
   
+  // 手指移动的开始
   handleTouchStart(event){
+    // 开始时清除过渡效果
     this.setData({
       coveTransition: ''
     })
     // 获取手指起始坐标
     startY = event.touches[0].clientY;
   },
+  // 手指移动事件
   handleTouchMove(event){
     moveY = event.touches[0].clientY;
+    // 手指移动距离
     moveDistance = moveY - startY;
     
     if(moveDistance <= 0){
       return;
     }
+    // 移动的临界值
     if(moveDistance >= 80){
       moveDistance = 80;
     }
@@ -66,6 +71,7 @@ Page({
       coverTransform: `translateY(${moveDistance}rpx)`
     })
   },
+  // 手指移动结束事件
   handleTouchEnd(){
     // 动态更新coverTransform的状态值
     this.setData({
