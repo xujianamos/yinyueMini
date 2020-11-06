@@ -1,5 +1,4 @@
 /**
-  作者: Created by zhiyongzaixian
   说明: 登录流程
   1. 收集表单项数据
   2. 前端验证
@@ -13,7 +12,7 @@
     4) 密码不正确返回给前端提示密码不正确
     5) 密码正确返回给前端数据，提示用户登录成功(会携带用户的相关信息)
 */
-import request from '../../utils/request'
+import request from '../../server/network'
 Page({
 
   /**
@@ -54,6 +53,7 @@ Page({
     *   3. 手机号格式正确，验证通过
     * */
     
+    // 判断手机号是否为空
     if(!phone){
       // 提示用户
       wx.showToast({
@@ -62,6 +62,7 @@ Page({
       })
       return;
     }
+    // 判断手机号是否正确
     // 定义正则表达式
     let phoneReg = /^1(3|4|5|6|7|8|9)\d{9}$/;
     if(!phoneReg.test(phone)){
@@ -81,6 +82,7 @@ Page({
     }
   
     // 后端验证
+    //isLogin用于验证发送的是不是登录请求，从而存储cookies
     let result = await request('/login/cellphone', {phone, password, isLogin: true})
     if(result.code === 200){ // 登录成功
       wx.showToast({

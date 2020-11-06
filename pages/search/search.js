@@ -1,4 +1,4 @@
-import request from '../../utils/request'
+import request from '../../server/network'
 let isSend = false; // 函数节流使用
 Page({
 

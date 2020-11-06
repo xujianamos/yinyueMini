@@ -36,6 +36,7 @@ Page({
     let recentPlayListData = await request('/user/record', {uid: userId, type: 0});
     let index = 0;
     let recentPlayList = recentPlayListData.allData.splice(0, 10).map(item => {
+      // 将id作为key值
       item.id = index++;
       return item;
     })
